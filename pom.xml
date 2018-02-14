@@ -93,11 +93,17 @@
             <version>2.3.0</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/org.webjars/angularjs -->
         <dependency>
             <groupId>org.webjars</groupId>
             <artifactId>angularjs</artifactId>
-            <version>1.6.9</version>
+            <version>1.4.9</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>bootstrap</artifactId>
+            <version>3.3.6</version>
+            <scope>runtime</scope>
         </dependency>
     </dependencies>
 
