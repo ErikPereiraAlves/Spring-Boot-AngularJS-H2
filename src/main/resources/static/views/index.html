@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="storeApp">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Erik Pereira Alves - store application</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/bootstrap.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+<h2>Administrator Panel</h2>
+<div class="home-section">
+    <ul class="menu-list">
+        <li><a href="#/products">Products</a></li>
+
+    </ul>
+</div>
+<div ng-view></div>
+<div ui-view></div>
+<script src="js/lib/angular.min.js" ></script>
+<script src="js/lib/angular-ui-router.min.js" ></script>
+<script src="js/lib/localforage.min.js" ></script>
+<script src="js/lib/ngStorage.min.js"></script>
+<script src="js/app.js"></script>
+<script src="js/controller.js"></script>
+
+</body>
+</html>
+
