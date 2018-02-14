@@ -16,6 +16,7 @@ angular.module('storeApp').factory('ProductService',
             return factory;
 
             function loadAllProducts() {
+            alert('load all products');
                 console.log('Fetching all products');
                 var deferred = $q.defer();
                 $http.get("http://localhost:8080/storeApp/api/v1/products/exclude/")
