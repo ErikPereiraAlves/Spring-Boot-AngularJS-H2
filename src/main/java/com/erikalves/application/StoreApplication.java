@@ -9,10 +9,10 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @SpringBootApplication
 @EnableAutoConfiguration
 @EnableJpaRepositories
-@ComponentScan("com.erikalves")
-class Application {
+@ComponentScan("com.erikalves.application")
+class StoreApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
+        SpringApplication.run(StoreApplication.class, args);
     }
 }
