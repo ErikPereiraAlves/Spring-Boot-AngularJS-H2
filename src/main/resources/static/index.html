@@ -5,10 +5,33 @@
     <title>${title}</title>
     <link href="css/bootstrap.css" rel="stylesheet"/>
     <link href="css/app.css" rel="stylesheet"/>
+
 </head>
 <body>
 
-<div ui-view></div>
+
+<!-- NAVIGATION -->
+<nav class="navbar navbar-inverse" role="navigation">
+    <div class="navbar-header">
+        <a class="navbar-brand" ui-sref="#">Application Vendas</a>
+    </div>
+    <ul class="nav navbar-nav">
+        <li><a ui-sref="home">Home</a></li>
+        <li><a ui-sref="products">Products</a></li>
+        <li><a ui-sref="users">Users</a></li>
+    </ul>
+</nav>
+
+
+<!-- MAIN CONTENT -->
+<div class="container">
+
+    <!-- THIS IS WHERE WE WILL INJECT OUR CONTENT ============================== -->
+    <div ui-view></div>
+
+</div>
+
+
 <script src="js/lib/angular.min.js" ></script>
 <script src="js/lib/angular-ui-router.min.js" ></script>
 <script src="js/lib/localforage.min.js" ></script>
@@ -16,5 +39,12 @@
 <script src="js/app/app.js"></script>
 <script src="js/app/ProductService.js"></script>
 <script src="js/app/ProductController.js"></script>
+
+<div id="footer">
+    <p>
+        Webpage made by <a href="/" target="_blank">Erik Pereira Alves</a>
+    </p>
+</div>
+
 </body>
 </html>

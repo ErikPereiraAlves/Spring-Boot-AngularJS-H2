@@ -16,7 +16,7 @@ angular.module('store').factory('ProductService',
             return factory;
 
             function loadAllProducts() {
-            alert('load all products');
+
                 console.log('Fetching all products');
 
                 var deferred = $q.defer();
@@ -25,7 +25,7 @@ angular.module('store').factory('ProductService',
                         function (response) {
                             console.log('Fetched successfully all products');
                             $localStorage.products = response.data;
-                            alert('Here are they'+ $localStorage.products);
+
                             deferred.resolve(response);
                         },
                         function (errResponse) {

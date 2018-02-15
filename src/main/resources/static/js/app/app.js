@@ -7,10 +7,10 @@ app.constant('urls', {
 
 app.config(['$stateProvider', '$urlRouterProvider',
     function($stateProvider, $urlRouterProvider) {
-        alert('will call products');
+
         $stateProvider
-            .state('home', {
-                url: '/',
+            .state('products', {
+                url: '/products',
                 templateUrl: 'products.html',
                 controller:'ProductController',
                 controllerAs:'ctrl',
@@ -22,6 +22,21 @@ app.config(['$stateProvider', '$urlRouterProvider',
                         return deferred.promise;
                     }
                 }
-            });
+            })
+
+        $stateProvider
+            .state('users', {
+                url: '/users',
+                templateUrl: 'users.html'
+
+            })
+
+          $stateProvider
+                    .state('home', {
+                        url: '/',
+                        templateUrl: 'home.html'
+
+                    });
+
         $urlRouterProvider.otherwise('/');
     }]);
