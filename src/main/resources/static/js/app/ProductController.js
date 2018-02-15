@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('storeApp').controller('ProductController',
+angular.module('store').controller('ProductController',
     ['ProductService', '$scope',  function( ProductService, $scope) {
 
         var self = this;

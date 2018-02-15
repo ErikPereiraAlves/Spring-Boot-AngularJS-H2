@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('storeApp').factory('ProductService',
+angular.module('store').factory('ProductService',
     ['$localStorage', '$http', '$q', 'urls',
         function ($localStorage, $http, $q, urls) {
 
@@ -18,12 +18,14 @@ angular.module('storeApp').factory('ProductService',
             function loadAllProducts() {
             alert('load all products');
                 console.log('Fetching all products');
+
                 var deferred = $q.defer();
-                $http.get("http://localhost:8080/storeApp/api/v1/products/exclude/")
+                $http.get("http://localhost:8080/store/api/v1/products/exclude/")
                     .then(
                         function (response) {
                             console.log('Fetched successfully all products');
                             $localStorage.products = response.data;
+                            alert('Here are they'+ $localStorage.products);
                             deferred.resolve(response);
                         },
                         function (errResponse) {
@@ -41,7 +43,7 @@ angular.module('storeApp').factory('ProductService',
             function getProduct(id) {
                 console.log('Fetching Product with id :'+id);
                 var deferred = $q.defer();
-                $http.get("http://localhost:8080/storeApp/api/v1/products/exclude/" + id)
+                $http.get("http://localhost:8080/store/api/v1/products/exclude/" + id)
                     .then(
                         function (response) {
                             console.log('Fetched successfully Product with id :'+id);
@@ -58,7 +60,7 @@ angular.module('storeApp').factory('ProductService',
             function createProduct(product) {
                 console.log('Creating Product');
                 var deferred = $q.defer();
-                $http.post("http://localhost:8080/storeApp/api/v1/products/", product)
+                $http.post("http://localhost:8080/store/api/v1/products/", product)
                     .then(
                         function (response) {
                             loadAllProducts();
@@ -75,7 +77,7 @@ angular.module('storeApp').factory('ProductService',
             function updateProduct(product, id) {
                 console.log('Updating Product with id '+id);
                 var deferred = $q.defer();
-                $http.put("http://localhost:8080/storeApp/api/v1/products/", product)
+                $http.put("http://localhost:8080/store/api/v1/products/", product)
                     .then(
                         function (response) {
                             loadAllProducts();
@@ -92,7 +94,7 @@ angular.module('storeApp').factory('ProductService',
             function removeProduct(id) {
                 console.log('Removing Product with id '+id);
                 var deferred = $q.defer();
-                $http.delete("http://localhost:8080/storeApp/api/v1/products/" + id)
+                $http.delete("http://localhost:8080/store/api/v1/products/" + id)
                     .then(
                         function (response) {
                             loadAllProducts();
