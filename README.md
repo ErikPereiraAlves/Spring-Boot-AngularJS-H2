@@ -56,7 +56,7 @@ http://www.baeldung.com/x-509-authentication-in-spring-security
 
 
 
-1. Generate a certificate using keygen command in windows:
+1. Generate a certificate using keygen command in windows (find keytool on Java Jdk installation and run CMD as admin):
 
 keytool -genkey -keystore server.keystore -alias erik-x509certificate-20180216 -keyalg RSA -keysize 2048 -validity 3950
 
@@ -70,4 +70,4 @@ keytool -export -alias erik-x509certificate-20180216 -keystore server.keystore -
 
 4. Import Certificate into client Truststore:
 
-keytool -importcert -alias erik-x509certificate-20180216 -file C:\Users\Erik_Pereira_Alves\IdeaProjects\erik-x509certificate-20180216.cer -keystore .truststore
+keytool -importcert -alias erik-x509certificate-20180216 -file C:\Program Files\Java\jdk-9.0.1\bin\erik-x509certificate-20180216.cer -keystore .truststore
