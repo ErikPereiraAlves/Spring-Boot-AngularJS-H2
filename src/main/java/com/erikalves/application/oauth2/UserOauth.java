@@ -25,6 +25,7 @@ public class UserOauth implements UserDetails {
 
         gas = new ArrayList<GrantedAuthority>();
         gas.add(new SimpleGrantedAuthority("ROLE_USER"));
+        gas.add(new SimpleGrantedAuthority("ROLE_ADMIN"));
 
 
     }
